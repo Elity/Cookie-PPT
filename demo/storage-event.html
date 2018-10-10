@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>storage-event demo</title>
+</head>
+
+<body>
+    <input type="text" id="input" />
+    <button id="set">设置</button>
+
+    <script>
+        const key = 'test'
+        const btn = document.getElementById('set');
+        const ipt = document.getElementById('input');
+        btn.addEventListener('click', () => {
+            localStorage.setItem(key, ipt.value)
+            ipt.value = ''
+        });
+        window.addEventListener('storage', e => {
+            if (e.key === key) {
+                ipt.value = e.newValue
+            }
+        })
+    </script>
+</body>
+
+</html>

