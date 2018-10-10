@@ -168,6 +168,8 @@ MDN 上写了值为 non-zero-digit，但是根据 rfc 中的说明，取值可�
 
 3.domain 设置有什么限制么？
 
+演示[fighting.com](http://fighting.com)
+
 - sub.a.com 可以设置 .a.com (是否说明二级域名一定可以设置一级域名？)
 - a.com 不能设置 sub.a.com
 - sina.com.cn 不能设置 .com.cn
@@ -206,6 +208,9 @@ Mozilla 很早之前就为此建立了一个列表[Public Suffix List](https://p
 
 一个带有安全属性的 cookie 只有在请求使用 SSL 和 HTTPS 协议的时候才会被发送到服务器，同时无法在非 https 的页面通过 document.cookie 读取。这可以有效防范[SSl strip](https://github.com/Elity/sslstrip-nodejs)后 cookie 失窃。然而，保密或敏感信息永远不要在 HTTP cookie 中存储或传输，因为整个机制从本质上来说都是不安全的，比如前述协议并不意味着所有的信息都是经过加密的。
 新版 Chrome 与 Firefox 已经`不支持`在非 https 的链接中设置 Secure 了。
+
+演示通过 SSLstrip 窃取 baidu 的 cookie:
+开启代理模拟被劫持，访问 evil.baidu.com
 
 ---
 
