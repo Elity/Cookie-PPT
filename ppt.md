@@ -27,7 +27,7 @@ Fighting
 
 2.服务端是如何区分不同用户的
 
-3.如果仅仅只是使用 document.cookie="a=1"，毫无安全可言，那为什么 webstorage 相对安全呢？ [csrf demo](./demo/csrf.html)
+3.如果仅仅只是使用 document.cookie="a=1"，毫无安全可言，那为什么 webstorage 相对安全呢？
 
 4.禁用浏览器的 cookie 功能，是否影响服务端 session 的工作
 
@@ -191,6 +191,7 @@ Mozilla 很早之前就为此建立了一个列表[Public Suffix List](https://p
 目前[兼容性](https://caniuse.com/#search=samesite)不太理想的一个属性
 
 可以有效防御跨站请求伪造攻击(CSRF)。
+[csrf demo](./demo/csrf.html)
 
 设定 cookie 在跨域的情况下是否需要发送到服务器(禁读不禁写)
 
