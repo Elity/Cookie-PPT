@@ -58,7 +58,9 @@ console.log(document.cookie);
 
 - 是不是所有的 cookie 都可以被上面这个代码读取？ (httpOnly 标识的不能读取)
 - a.com 网站下能否读取 b.com 网站下的 cookie？ 为什么不能？ 同源策略限制么？(不能，非同源策略)
-- 有没有办法知道某个 cookie 什么时候过期？ （很遗憾，浏览器暴露的 cookie 操作方式只有 document.cookie）
+- 有没有办法知道某个 cookie 什么时候过期？ （很遗憾，目前浏览器暴露的 cookie 操作方式只有 document.cookie）
+
+[CookieStore](https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies)
 
 ---
 
